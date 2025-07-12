@@ -1,0 +1,27 @@
+digraph "Code Researcher AWS Architecture" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Code Researcher AWS Architecture" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"877af26fe6d94e05adb97dafdcdc79ba" [label=GitHub height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/generic/blank/blank.png" shape=none]
+	"597246898e0642c3a10e7bebeefa841a" [label="App Monitoring" height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/generic/blank/blank.png" shape=none]
+	b4e5d2835baf4f908fc7a2ce0eb27837 [label=CloudWatch height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/management/cloudwatch.png" shape=none]
+	"77aaf68770944d518d107f180104e6a6" [label="SNS Topic" height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/integration/simple-notification-service-sns.png" shape=none]
+	b4ee9a6b7e3f4eaab07461227b950a25 [label="Bedrock
+Claude 4.0" height=2.3 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/ml/bedrock.png" shape=none]
+	subgraph cluster_Compute {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Compute labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		b3df189990844c46925070bf7ee6eda2 [label="Load Balancer" height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/network/elb-application-load-balancer.png" shape=none]
+		"95cb5d6d77c442dfb7ac48ceb86b77dc" [label="Code Researcher
+Container" height=2.3 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/compute/fargate.png" shape=none]
+	}
+	b8c68aa252d44dca8c299f38f9f17000 [label=IAM height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/security/identity-and-access-management-iam.png" shape=none]
+	e574f36569e6435680ba5ca4e7737a7d [label=Secrets height=1.9 image="/Users/olalekanelesin/.cache/uv/archive-v0/gFgb-54orYhGkqjkQY4R_/lib/python3.13/site-packages/resources/aws/security/secrets-manager.png" shape=none]
+	"597246898e0642c3a10e7bebeefa841a" -> b4e5d2835baf4f908fc7a2ce0eb27837 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b4e5d2835baf4f908fc7a2ce0eb27837 -> "77aaf68770944d518d107f180104e6a6" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"77aaf68770944d518d107f180104e6a6" -> b3df189990844c46925070bf7ee6eda2 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b3df189990844c46925070bf7ee6eda2 -> "95cb5d6d77c442dfb7ac48ceb86b77dc" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"95cb5d6d77c442dfb7ac48ceb86b77dc" -> b4ee9a6b7e3f4eaab07461227b950a25 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"95cb5d6d77c442dfb7ac48ceb86b77dc" -> e574f36569e6435680ba5ca4e7737a7d [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e574f36569e6435680ba5ca4e7737a7d -> "877af26fe6d94e05adb97dafdcdc79ba" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b8c68aa252d44dca8c299f38f9f17000 -> "95cb5d6d77c442dfb7ac48ceb86b77dc" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}

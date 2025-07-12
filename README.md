@@ -1,4 +1,4 @@
-# Code Researcher 
+# Code Researcher powered by AWS Strands Agents
 Inspired by [Microsoft Code Researcher White Paper](https://arxiv.org/abs/2506.11060) 🤖
 
 An open source AI-powered platform that automatically investigates bugs and creates fix proposals using AWS Strands Agents.
@@ -139,6 +139,20 @@ pytest tests/
 ```bash
 python -m src.api.webhook_server --reload
 ```
+
+### Diagram Rendering
+
+Code Researcher includes architecture diagrams generated using the `diagrams` Python package. If you encounter Graphviz installation issues, we provide an online rendering solution:
+
+```bash
+# Render all diagrams in generated-diagrams/
+python render_diagrams.py
+
+# Test the diagram renderer
+python test_diagram_renderer.py
+```
+
+For detailed information about diagram rendering, see [docs/DIAGRAM_RENDERING.md](docs/DIAGRAM_RENDERING.md).
 
 ## Contributing
 
