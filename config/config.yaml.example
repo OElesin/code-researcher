@@ -1,0 +1,55 @@
+# Code Researcher Configuration
+
+# AWS Bedrock Configuration
+aws:
+  region: us-east-1
+  bedrock_model: anthropic.claude-sonnet-4-20250514-v1:0
+
+# Alert Integrations
+alerts:
+  cloudwatch:
+    enabled: true
+    sns_topic_arn: arn:aws:sns:us-east-1:123456789:code-researcher-alerts
+    webhook_url: https://your-domain.com/webhook/cloudwatch
+  
+  datadog:
+    enabled: false
+    api_key: your-datadog-api-key
+    webhook_url: https://your-domain.com/webhook/datadog
+  
+  newrelic:
+    enabled: false
+    api_key: your-newrelic-api-key
+    webhook_url: https://your-domain.com/webhook/newrelic
+
+# VCS Configuration
+vcs:
+  github:
+    access_token: your-github-token
+    repositories:
+      - owner: your-org
+        name: backend-service
+        branch: main
+        alert_keywords: ["error", "exception", "crash", "timeout"]
+        file_patterns: ["**/*.py", "**/*.js", "**/*.java"]
+      - owner: your-org
+        name: frontend-app
+        branch: main
+        alert_keywords: ["javascript", "react", "ui"]
+        file_patterns: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+  
+  gitlab:
+    enabled: false
+    access_token: your-gitlab-token
+    base_url: https://gitlab.com  # or your self-hosted instance
+
+# Server Configuration
+server:
+  host: 0.0.0.0
+  port: 8000
+  debug: false
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
