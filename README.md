@@ -171,8 +171,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 - 📖 [Documentation](docs/)
-- 💬 [GitHub Discussions](https://github.com/your-org/code-researcher/discussions)
-- 🐛 [Issue Tracker](https://github.com/your-org/code-researcher/issues)
+- 💬 [GitHub Discussions](https://github.com/OElesin/code-researcher/discussions)
+- 🐛 [Issue Tracker](https://github.com/OElesin/code-researcher/issues)
 
 ## Roadmap
 

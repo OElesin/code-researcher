@@ -1,0 +1,16 @@
+aws:
+  region: us-east-1
+  bedrock_model: anthropic.claude-sonnet-4-20250514-v1:0
+
+alerts:
+  cloudwatch:
+    enabled: true
+    sns_topic_arn: your-sns-topic-arn
+
+vcs:
+  github:
+    access_token: your-github-token
+    repositories:
+      - owner: your-org
+        name: your-repo
+        branch: main
